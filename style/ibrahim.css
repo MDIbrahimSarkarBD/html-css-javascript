@@ -140,9 +140,7 @@ input#theme:checked::before {
     border-radius: 3px;
     color: var(--font_oolor);
 }
-#select option{
-    
-}
+
 .select:focus-visible{
     outline: none;
     outline-width: 0px;
