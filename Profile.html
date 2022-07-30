@@ -6,16 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile in MD Ibrahim sarkar BD</title>
     <link rel="stylesheet" href="style/ibrahim.css">
-</head>
-<body>
-    <header>
-        <h1>Ibrahim sarkar BD Web devoloper.</h1>
-    </header>
-    <section>
+    <link rel="stylesheet" href="style/ibrahim_utilities.css">
 
-    </section>
+</head>
+<body class="resp_body">
+<div class="main">
+
+
+    <header id="header">
+        
+        <!-- banner or photo aria start -->
+        <section>
+            <div class="banner">
+                <img id="banner" src="image/banner-is.png" alt="">
+                
+            </div>
+            <div class="photo">
+                <img id="photo" src="image/profile-photo.png" alt="">
+            </div>
+        </section>
+    </header>
+    
+
+    <!-- Parsonae informatin and Setting -->
+    <div class="is_container is_mt_3 is_col_2">
+        <!-- User data -->
+        <div class="left">
+            <h4>Your Basic Information</h4>
+            <form action="" class=" form_p">
+                <ul>
+                    <li class="is_form_input">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </li>
+                    <li class="is_form_input">
+                        <label for="email">Email Address  </label>
+                        <input type="email" id="email" pattern="+@globex\.com" size="" required>
+                    </li>
+                    <li class="is_form_input">
+                        <label for="genger">Gender </label>
+                        <input type="text" id="genger" required>
+                    </li>
+                    <li class="is_form_input">
+                        <label for="pass">Password</label>
+                        <input type="password" pattern=".+[a-z][A-Z]" id="pass" minlength="6" maxlength="10"  required>
+                    </li>
+                </ul>
+                <input class="submit" type="submit">
+            </form>
+        </div>
+        <!-- Setting data -->
+        <div class="right ">
+            <h4>System Settings</h4>
+            <form action="" class="form_p">
+                <ul>
+                    <li class="is_form_input">
+                        <label for="theme">Theme</label>
+                        <div class="is_col_2 ">
+                            <input onclick="document.body.classList.toggle('night');" class="chickBox" type="checkbox" id="theme" required>
+                            
+                            <div class="is_ofh">
+                                <label for="select" class="is_dn">Choose a pet:</label>
+                               <select name="pets" id="select">
+                                <option value="">--Please choose an option--</option>
+                                <option value="dog">Dog</option>
+                                <option value="cat">Cat</option>
+                                <option value="hamster">Hamster</option>
+                                <option value="parrot">Parrot</option>
+                                <option value="spider">Spider</option>
+                                <option value="goldfish">Goldfish</option>
+                            </select> 
+                            </div>
+                            
+                        </div>
+                    </li>
+                    <li class="is_form_input">
+                        <label for="lang">Language</label>
+                        <input type="text" id="lang" placeholder="languages" required>
+                    </li>
+                   
+                    
+                </ul>
+            </form>
+        </div>
+    </div>
     <footer>
         
     </footer>
+</div>
 </body>
 </html>
