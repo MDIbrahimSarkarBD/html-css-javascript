@@ -1,6 +1,21 @@
 .is_ma{
     margin: auto;
 }
+.is_ml_1{
+    margin-left: 4px;
+}
+.is_ml_2{
+    margin-left: 8px;
+}
+.is_ml_3{
+    margin-left: 12px;
+}
+.is_ml_4{
+    margin-left: 20px;
+}
+.is_ml_5{
+    margin-left: 20px;
+}
 .is_mt_1{
     margin-top: 4px;
 }
@@ -58,4 +73,46 @@ h4{
 }
 .is_dn{
     display: none;
+}
+.is_ta_left{
+    text-align: left;
+}
+.is_h4_2{
+    background: var(--is_body_bg);
+    text-align: left !important;
+    font-family: sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+    height: 70px;
+    white-space: inherit;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    color: #bcbcbc;
+}
+.is_c_y{
+    color: yellow;
+}
+/* Item aline */
+.is_t_end{
+    align-items: flex-end;
+}
+
+/* Text aline  */
+.is_t_center{
+    text-align: center;
+}
+.is_t_end{
+    text-align: end;
+}
+
+.twitter::before{
+    
+font-weight: 400;
+	content: "\1F3DC";
+}
+.is_j_center{
+    justify-content: center;
 }

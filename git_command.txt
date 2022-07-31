@@ -1,0 +1,52 @@
+git add fileName senigle // stage singles
+git add -A  // all file go to stage.
+
+git reset // all file unteract
+git reset --hard // hard reset 
+
+git add . // folder up to stage
+
+git commit // press i and type 'Initial connit' press enter and 
+              press ESC button and type ':wq' press Enter
+
+git commit -m "" // comment the change file  
+
+git status // show the git file status
+
+git checkout file name //  if one file delete then back File 
+git checkout -f // all file backup
+
+git log        //  all log information
+git log -p -1  //  last log commit information show
+               //  Q button press end command line exit 
+git log --online
+git deff       //  
+git deff --staged // 
+
+touch file name and type // new file create
+
+git rm file name // file remove
+git rm file name -f  // focusly Delete file all commit
+
+git .gitignore  // file create this file in tolk instraction no traking
+git add -A   // stage up
+
+git branch // show the branch name
+git branch name type // new create branch name
+git checkout -b name // branch name type and up to branch
+git checkout master // go to the branch name
+git marge branch_name -m "comment type" // branch to branch marge 
+
+git remote -v //  
+ssh-keygen -o -t rsa -C "ibrahimcomputer733@gmail.com"
+ssh-keygen -t ed25519 -C "ibrahimcomputer733@gmail.com"
+
+eval "$(ssh-agent -s)"
+ssh-add ~/Desktop/ibrahim/gitAllFile/template
+git remote add origin git@github.com:MDIbrahimSarkarBD/html-css-javascript.githtml-css-javascript.git
+
+C:\Users\Code\Desktop\ibrahim\gitAllFile
+git push origin master  // 
+
+
+
