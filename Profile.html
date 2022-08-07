@@ -48,7 +48,7 @@
                     </li>
                     <li class="is_form_input">
                         <label for="pass">Password</label>
-                        <input type="password" pattern=".+[a-z][A-Z]" id="pass" minlength="6" maxlength="10"  required>
+                        <input type="password" pattern=".+[a-z][A-Z]" id="" minlength="6" maxlength="10"  required>
                     </li>
                 </ul>
                 <input class="submit" type="submit">
@@ -62,7 +62,7 @@
                     <li class="is_form_input">
                         <label for="theme">Theme</label>
                         <div class="is_col_2 ">
-                            <input onclick="document.body.classList.toggle('night');" class="chickBox" type="checkbox" id="theme" required>
+                            <input  class="chickBox" type="checkbox" id="theme" required>
                             
                             <div class="is_ofh">
                                 <label for="select" class="is_dn">Choose a pet:</label>
@@ -268,8 +268,55 @@ var data = dates.fullDate;
         }
         
     }
+
     
-   
+    // theme controle....
+    var theme = document.getElementById("theme");
+    if (theme) {
+        
+        localStorage.getItem("theme") == 'night' ?  document.body.classList.add('night') : document.body.classList.remove('night');
+        localStorage.getItem("theme") == 'night' ?  theme.checked = true : theme.checked = false; 
+        
+        theme.onclick = function () {
+            
+            if (document.body.classList.contains("night")) {
+                localStorage.getItem("theme") == 'night' ?  document.body.classList.remove('night') : document.body.classList.add('night');
+                localStorage.getItem("theme") == 'night' ?  document.body.classList.remove('night') : document.body.classList.add('night');
+                localStorage.getItem("theme") == 'night' ?  localStorage.removeItem("theme") : localStorage.setItem("theme", "night");
+
+            }else{
+                localStorage.setItem("theme", "night");
+                document.body.classList.add('night');  
+            }
+                
+        }
+    }
+    
+    class ThemeChange{
+
+        buttontID = null;
+        checkBox  = 0;
+        constructor(buttonID, themeColor){
+            this.buttontID = document.getElementById("theme"); 
+
+            if (this.buttontID) {
+                
+                
+            }else{
+                console.log('Element --ID-- wrong');
+                
+            }
+        }
+
+        click(){
+            console.log('f');
+            
+        }
+
+    }
+    var themes = new ThemeChange("theme","night").buttontID;
+    themes.click();
+    
     
 </script>
 </body>

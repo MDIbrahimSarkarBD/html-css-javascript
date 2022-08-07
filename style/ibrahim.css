@@ -20,7 +20,7 @@ li{
     --input_b_c: #ffffffbb;
     --font_oolor: white;
     --btn_bg: var(--is_bg);
-    --footer: rgb(39, 31, 53);
+    --footer: rgb(39,31, 53);
 }
 .night{
     --is_bg: #080F11;
@@ -32,7 +32,11 @@ li{
 
 }
 body{
+	background: #e53935;
     background: var(--is_bg);
+    
+	
+	
 }
 .main{
     min-width: 360px;
