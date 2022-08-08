@@ -272,50 +272,100 @@ var data = dates.fullDate;
     
     // theme controle....
     var theme = document.getElementById("theme");
-    if (theme) {
+    // if (theme) {
         
-        localStorage.getItem("theme") == 'night' ?  document.body.classList.add('night') : document.body.classList.remove('night');
-        localStorage.getItem("theme") == 'night' ?  theme.checked = true : theme.checked = false; 
+    //     localStorage.getItem("theme") == 'night' ?  document.body.classList.add('night') : document.body.classList.remove('night');
+    //     localStorage.getItem("theme") == 'night' ?  theme.checked = true : theme.checked = false; 
         
-        theme.onclick = function () {
+    //     theme.onclick = function () {
             
-            if (document.body.classList.contains("night")) {
-                localStorage.getItem("theme") == 'night' ?  document.body.classList.remove('night') : document.body.classList.add('night');
-                localStorage.getItem("theme") == 'night' ?  document.body.classList.remove('night') : document.body.classList.add('night');
-                localStorage.getItem("theme") == 'night' ?  localStorage.removeItem("theme") : localStorage.setItem("theme", "night");
+    //         if (document.body.classList.contains("night")) {
+    //             localStorage.getItem("theme") == 'night' ?  document.body.classList.remove('night') : document.body.classList.add('night');
+    //             localStorage.getItem("theme") == 'night' ?  document.body.classList.remove('night') : document.body.classList.add('night');
+    //             localStorage.getItem("theme") == 'night' ?  localStorage.removeItem("theme") : localStorage.setItem("theme", "night");
 
-            }else{
-                localStorage.setItem("theme", "night");
-                document.body.classList.add('night');  
-            }
+    //         }else{
+    //             localStorage.setItem("theme", "night");
+    //             document.body.classList.add('night');  
+    //         }
                 
-        }
-    }
+    //     }
+        
+    // }
     
     class ThemeChange{
-
-        buttontID = null;
-        checkBox  = 0;
+        
         constructor(buttonID, themeColor){
-            this.buttontID = document.getElementById("theme"); 
 
-            if (this.buttontID) {
-                
-                
-            }else{
-                console.log('Element --ID-- wrong');
-                
-            }
+            this.buttontID = document.getElementById(buttonID); 
+            this.themeName = themeColor;
+
+            this.buttontID.checked = true;
+            
+            // Check button click UI visualizer
+            this.storageHas() == true ? this.themeAdd(this.themeName) : this.themeRemove(this.themeName) ;
+            this.storageHas() == true ? this.buttontID.checked  = true : this.buttontID.checked = false ;
+
+
+            this.click();
+    
         }
 
         click(){
-            console.log('f');
+            var self =  this;
+            if (this.buttontID) {
+                this.buttontID.onclick = function (theme) {
+                    
+                    if (self.buttontID.checked) {
+                        self.themeAdd(self.themeName);
+                        self.storageAdd("theme", self.themeName);
+                        
+                    }else{
+                        self.themeRemove(self.themeName);
+                        self.storageRemove("theme");
+                    }
+            
+                }
+            }
             
         }
 
+
+        // theme class add CSS class 
+        themeAdd(className){
+            document.body.classList.add(className);
+        }
+
+        // theme class remove CSS class 
+        themeRemove(className){
+            document.body.classList.remove(className);
+        }
+
+        // browser localstorage remove add 
+        storageAdd(name, value){
+            localStorage.setItem(name, value);
+            this.themeHas = true;
+            
+        }
+
+        // browser localstorage remove Item 
+        storageRemove(name){
+            localStorage.removeItem(name);
+            this.themeHas = false;
+            return localStorage.removeItem(name);
+            
+        }
+
+        // theme browser localstorag checker on boolean
+        storageHas(){
+            this.themeHas = localStorage.getItem("theme") == null ? false : true;
+            return this.themeHas ;
+        }
+
     }
-    var themes = new ThemeChange("theme","night").buttontID;
-    themes.click();
+
+    new ThemeChange("theme","night");
+    
     
     
 </script>
